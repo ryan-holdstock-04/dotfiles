@@ -1,0 +1,91 @@
+configuration {
+    show-icons: true;
+    icon-theme: "hicolor";
+/* IJKL Navigation */
+    kb-row-up: "i";
+    kb-row-down: "k";
+    kb-row-left: "j";
+    kb-row-right: "l";
+
+    /* Standard Vim-style accept (optional but helpful) */
+    kb-accept-entry: "Return,KP_Enter";
+    
+    /* Remove default 'l' and 'j' bindings to avoid conflicts */
+    kb-mode-next: "";
+    kb-mode-previous: "";
+}
+
+/* --- Your Palette Integration --- */
+* {
+    rosewater: #f4dbd6;
+    flamingo: #f0c6c6;
+    pink: #f5bde6;
+    mauve: #c6a0f6;
+    red: #ed8796;
+    maroon: #ee99a0;
+    peach: #f5a97f;
+    yellow: #eed49f;
+    green: #a6da95;
+    teal: #8bd5ca;
+    sky: #91d7e3;
+    sapphire: #7dc4e4;
+    blue: #8aadf4;
+    lavender: #b7bdf8;
+    text: #cad3f5;
+    subtext1: #b8c0e0;
+    subtext0: #a5adcb;
+    overlay2: #939ab7;
+    overlay1: #8087a2;
+    overlay0: #6e738d;
+    surface2: #5b6078;
+    surface1: #494d64;
+    surface0: #363a4f;
+    base: #24273a;
+    mantle: #1e2030;
+    crust: #181926;
+
+    /* Map palette to Rofi variables */
+    background-color: transparent;
+    text-color:       transparent; /* Keeps filenames hidden */
+}
+
+window {
+    width:            80%;
+    height:           70%;
+    background-color: @base; /* Using your 'base' color */
+    border:           3px;
+    border-color:     @mauve; /* Border matches 'mauve' */
+    border-radius:    12px;
+}
+
+listview {
+    columns:       4;
+    lines:         3;
+    spacing:       20px;
+    padding:       20px;
+    fixed-columns: true;
+}
+
+element {
+    orientation:      vertical;
+    padding:          10px;
+    border-radius:    10px;
+    background-color: @surface0; /* Slightly lighter than base */
+}
+
+/* When you hover/select an image */
+element selected {
+    background-color: @surface2; 
+    border:           2px;
+    border-color:     @lavender;
+}
+
+element-icon {
+    size:    250px;
+    cursor:  pointer;
+    padding: 0px;
+}
+
+element-text {
+    height: 0px; /* Ensures text doesn't push the icon up */
+}
