@@ -5,7 +5,6 @@ THUMB_DIR="$HOME/.cache/wallpaper-thumbs"
 
 # Create thumbnail directory if it doesn't exist
 mkdir -p "$THUMB_DIR"
-#test
 # 1. Generate thumbnails for any images that don't have one
 # This only runs for new images, so it's very fast after the first time
 find "$WALL_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | while read -r img; do
