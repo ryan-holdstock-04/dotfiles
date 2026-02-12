@@ -12,7 +12,11 @@ find "$WALL_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" 
   thumb="$THUMB_DIR/$(basename "$img")"
   if [ ! -f "$thumb" ]; then
     # Create a 200px thumbnail
-    magick "$img" -thumbnail 200x200^ -gravity center -extent 200x200 "$thumb"
+    magick "$img" -thumbnail 250x250^ -gravity center -extent 250x250 \
+      \( +clone -alpha transparent -background none \
+      -draw "roundrectangle 0,0,250,250,20,20" \) \
+      -compose DstIn -composite \
+      "$thumb"
   fi
 done
 
