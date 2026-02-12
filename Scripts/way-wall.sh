@@ -5,17 +5,14 @@ THUMB_DIR="$HOME/.cache/wallpaper-thumbs"
 
 # Create thumbnail directory if it doesn't exist
 mkdir -p "$THUMB_DIR"
+
 # 1. Generate thumbnails for any images that don't have one
 # This only runs for new images, so it's very fast after the first time
 find "$WALL_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | while read -r img; do
   thumb="$THUMB_DIR/$(basename "$img")"
   if [ ! -f "$thumb" ]; then
     # Create a 200px thumbnail
-    magick "$img" -thumbnail 250x250^ -gravity center -extent 250x250 \
-      \( +clone -alpha transparent -background none \
-      -draw "roundrectangle 0,0,250,250,20,20" \) \
-      -compose DstIn -composite \
-      "$thumb"
+    magick "$img" -thumbnail 800x800^ -gravity center -extent 800x800 "$thumb"
   fi
 done
 
