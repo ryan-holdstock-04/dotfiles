@@ -1,5 +1,5 @@
 pacman:
-clipse fastfetch fuzzel hyprlock hypridle nvim qimgv swaync waybar yazi firefox spotify-launcher kitty pipewire pipewire-pulse wireplumber pavucontrol fzf file ffmpeg 7zip jq poppler fd rg zoxide resvg wl-clipboard xdg-desktop-portal-hyprland qt5-wayland qt6-wayland grim slurp hyprpicker swww ttf-jetbrains-mono-nerd nmtui missioncenter dotoolc hyprshot
+clipse fastfetch fuzzel hyprlock hypridle nvim qimgv swaync waybar yazi firefox spotify-launcher kitty pipewire pipewire-pulse wireplumber pavucontrol fzf file ffmpeg 7zip jq poppler fd rg zoxide resvg wl-clipboard xdg-desktop-portal-hyprland qt5-wayland qt6-wayland grim slurp hyprpicker swww ttf-jetbrains-mono-nerd nmtui missioncenter dotoolc hyprshot rofi-wayland
 
 yay:
 discord
