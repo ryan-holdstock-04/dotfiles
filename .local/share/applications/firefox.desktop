@@ -1,0 +1,8 @@
+# ~/.local/share/applications/hyprconf.desktop
+[Desktop Entry]
+Type=Application
+Name=Firefox
+Exec=firefox
+Icon=/home/rasberry/Pictures/icons/firefox.svg
+Terminal=false
+Categories=Utility;

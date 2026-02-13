@@ -1,0 +1,8 @@
+# ~/.local/share/applications/hyprconf.desktop
+[Desktop Entry]
+Type=Application
+Name=Run Nvim
+Exec=kitty -e nvim
+Icon=/home/rasberry/Pictures/icons/terminal.svg
+Terminal=false
+Categories=Utility;

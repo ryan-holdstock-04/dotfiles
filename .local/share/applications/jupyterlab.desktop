@@ -1,0 +1,8 @@
+# ~/.local/share/applications/hyprconf.desktop
+[Desktop Entry]
+Type=Application
+Name=Run Jupyter
+Exec=kitty -e  /home/rasberry/.local/share/applications/startjupyter.sh
+Icon=/home/rasberry/Pictures/icons/terminal.svg
+Terminal=false
+Categories=Utility;

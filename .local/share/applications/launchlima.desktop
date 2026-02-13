@@ -1,0 +1,8 @@
+# ~/.local/share/applications/hyprconf.desktop
+[Desktop Entry]
+Type=Application
+Name=Launch ITSC-3146
+Exec=kitty -e /home/linuxbrew/.linuxbrew/bin/limactl shell itsc-3146
+Icon=/home/rasberry/Pictures/icons/terminal.svg
+Terminal=false
+Categories=Utility;

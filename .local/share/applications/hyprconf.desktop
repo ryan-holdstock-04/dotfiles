@@ -1,0 +1,8 @@
+# ~/.local/share/applications/hyprconf.desktop
+[Desktop Entry]
+Type=Application
+Name=Hyprland Config
+Exec=kitty -e /home/rasberry/Scripts/hyprconfig.sh
+Icon=/home/rasberry/Pictures/icons/terminal.svg
+Terminal=false
+Categories=Utility;
