@@ -29,6 +29,9 @@ ueberzug_scale  = 1
 ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
+aseprite = [
+    {run = '/home/rasberry/.local/share/Steam/steamapps/common/Aseprite/aseprite "$@"', desc="aseprite", orphan = true, for = "linux"}
+]
 image_view = [
     { run = 'qimgv "$@"', desc = "qimgv", for = "linux" },
 ]
@@ -72,6 +75,9 @@ download = [
 
 [open]
 rules = [
+  # Aseprite
+  { url = "*.ase", use = ["aseprite"]},
+  { url = "*.aseprite", use = ["aseprite"]},
 	# Folder
 	{ url = "*/", use = [ "edit", "open", "reveal" ] },
   # HTML
@@ -79,9 +85,9 @@ rules = [
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
-	{ mime = "image/*", use = [ "image_view", "reveal" ] },
+	{ mime = "image/*", use = [ "image_view", "reveal", "aseprite" ] },
 	# Media
-	{ mime = "{audio,video}/*", use = [ "video_play", "reveal" ] },
+	{ mime = "{audio,video}/*", use = [ "video_play", "reveal", "aseprite" ] },
 	# Archive
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
 	# JSON
