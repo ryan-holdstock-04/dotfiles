@@ -12,7 +12,7 @@
 
 * {
   font-size: 15px;
-  font-family: "Fira Code Light","Font Awesome 6 Free Solid", sans-serif;
+  font-family: "Century Schoolbook Monospace","Source Han Serif JP Medium","Font Awesome 6 Free Solid", sans-serif;
 }
 
 window#waybar {
@@ -196,7 +196,7 @@ battery {
 
 /* active window */
 #workspaces button.active {
-  padding: 0px 5px;
+  padding: 0px 5px 1px 5px;
   color: mix(#ffffff, @color1, 0.5);
   border: none;
   background:mix(#000000, @color1, 0.5);
@@ -213,7 +213,7 @@ battery {
 
 /* not visible window that has stuff in it */
 #workspaces button:not(.active):not(.visible):not(.empty) {
-    padding: 1px 5px 0px 5px;
+    padding: 0px 5px 0px 5px;
     color: mix(#000000,@color1,0.5); 
     background: alpha(@color1, 0);
     border-radius: 0px;
