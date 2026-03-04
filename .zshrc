@@ -23,6 +23,7 @@ autoload -U colors && colors
 #alias vi = "nvim"
 #alias vim = "nvim"
 export EDITOR="nvim"
+export PATH=~/.npm-global/bin:$PATH
 
 # cmp opts
 zstyle ':completion:*' menu select # tab opens cmp menu

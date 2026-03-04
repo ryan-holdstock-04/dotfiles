@@ -18,6 +18,7 @@ prepend_keymap = [
   { on = [ "g", "S" ],       run = "cd /home/rasberry/mnt/schoolvm",             desc = "Go to classes" },
   { on = [ "g", "a" ],       run = "cd /home/rasberry/.local/share/applications",             desc = "Go to applications" },
   { on = [ "s", "s" ], run = "shell --block /home/rasberry/Scripts/sudoyazi.sh", desc = "Relaunch with sudo privileges"},
+  { on = [ "s", "d" ], run = "shell 'ripdrag \"$@\" &' --confirm", desc="Drag and drop files"}
 ]
 
 # [spot]
