@@ -1,0 +1,276 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 15,
+  "margin": "0px 0px 0px 0px",
+  "border-radius": "10px",
+  "reload_style_on_change": true,
+  "modules-left": [
+    "hyprland/workspaces",
+    "input-method",
+    "mpris"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "idle_inhibitor",
+    "network",
+    "bluetooth",
+    "pulseaudio",
+    "battery",
+    "clock#2",
+    "custom/colorpicker"
+  ],
+  "input-method": {
+    "format": "{active_name}",
+    "tooltip-format": "{active_id} : {active_name}",
+    "on-click": "ibus-setup"
+  },
+  "group/expand2": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "transition-to-left": true,
+      "hover-to-reveal": true
+    },
+    "modules": [
+      "cpu",
+      "memory",
+      "disk"
+    ]
+  },
+  "custom/wallpaper": {
+    "format": "(-)",
+    "tooltip": "What will it be?",
+    "on-click": "/home/rasberry/randomize.sh"
+  },
+  "custom/div2": {
+    "format": "[",
+    "tooltip": false
+  },
+  "custom/div3": {
+    "format": "]",
+    "tooltip": false
+  },
+  "custom/div": {
+    "format": "|",
+    "tooltip": false
+  },
+  "mpris": {
+    "format": "\ueb2c {artist} - {title}",
+    "format-paused": "\uead1 {artist} - paused",
+    "title-len": 18,
+    "artist-len": 15,
+    "interval": 1,
+    "dynamic-len": 15,
+    "tooltip-format": "{player} - {status}\n{title} - {artist}\n{album}\n{position}/{length}"
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "\uf205",
+      "deactivated": "\uf204"
+    },
+    "tooltip": false
+  },
+
+  "custom/note": {
+    "format": "notepad",
+    "on-click": "kitty nano notepad.txt",
+    "tooltip": false
+  },
+  "disk": {
+    "format": "[] {percentage_used}%",
+    "unit": "GB"
+  },
+  "hyprland/workspaces": {
+    "format":"{icon}",
+    "format-icons": {
+      "active": "龍",
+      "1":"一",
+      "2":"二",
+      "3":"三",
+      "4":"四",
+      "5":"五",
+      "6":"六",
+      "7":"七",
+      "8":"八",
+      "9":"九",
+      "10":"十"
+    },
+    "sort-by-number":true,
+    "persistent-workspaces": {
+      "*": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,7,8,9,10
+      ]
+    }
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "",
+    "on-click": "swaync-client -t -sw",
+    "escape": true
+  },
+  "clock#2": {
+    "format": "{:%I:%M:%S %p}",
+    "tooltip-format": "{:%A, %B %d, %Y}",
+    "interval": 1,
+    "tooltip": true,
+    "on-click": "gnome-calendar",
+    "calendar": {
+      "format": {
+        "today": "<span color='#fAfBfC'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "shift_down",
+      "on-click": "shift_up"
+    }
+  },
+  "clock": {
+    "format": "{:%a, %B %d, %Y}",
+    "tooltip-format": "{:%A, %B %d, %Y}",
+    "interval": 1,
+    "tooltip": true,
+    "on-click": "gnome-calendar",
+    "calendar": {
+      "format": {
+        "today": "<span color='#fAfBfC'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "shift_down",
+      "on-click": "shift_up"
+    }
+  },
+  "network": {
+    "interval": 1,
+    "format-wifi": "\uf1eb ",
+    "format-ethernet": "\uef44 ",
+    "format-disconnected": "\udb82\udd2b ",
+    "tooltip-format-disconnected": "\udb82\udd2b ",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↑{bandwidthUpBits} ↓{bandwidthDownBits}",
+    "tooltip-format-ethernet": "{essid} ({signalStrength}%)\n↑{bandwidthUpBits} ↓{bandwidthDownBits}",
+    "on-click": "nm-connection-editor"
+  },
+  "bluetooth": {
+    "format-on": "\udb80\udcb2",
+    "format-connected": "\udb80\udcb0",
+    "format-off": "\udb80\udcb2",
+    "format-disabled": "\udb80\udcb2",
+    "tooltip-format-enumerate-connected": "{device_alias}\n   {device_address}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "on-click": "blueberry"
+  },
+  "battery": {
+    "interval": 5,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "\udb80\udc84 {capacity}%",
+    "format-plugged": "\udb80\udc84 {capacity}%",
+    "format-icons": [
+      "\udb80\udc7a",
+      "\udb80\udc7b",
+      "\udb80\udc7c",
+      "\udb80\udc7d",
+      "\udb80\udc7e",
+      "\udb80\udc7f",
+      "\udb80\udc80",
+      "\udb80\udc81",
+      "\udb80\udc82",
+      "\udb85\udfe2"
+    ]
+  },
+  "custom/pacman": {
+    "format": "󰅢 {}",
+    "interval": 30,
+    "exec": "checkupdates | wc -l",
+    "exec-if": "exit 0",
+    "on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+    "signal": 8,
+    "tooltip": false
+  },
+  "hyprland/language": {
+    "format": "lang: {short}",
+    "tooltip": false
+  },
+  "custom/expand": {
+    "format": "[] []",
+    "tooltip": false
+  },
+  "custom/btlogo": {
+    "format": "[]"
+  },
+  "custom/wifilogo": {
+    "format": "[]"
+  },
+  "custom/endpoint": {
+    "format": "|",
+    "tooltip": false
+  },
+  "group/expand": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "transition-to-left": true,
+      "hover-to-reveal": true
+    },
+    "modules": [
+      "network",
+      "bluetooth"
+    ]
+  },
+  "custom/colorpicker": {
+    "format": "\ue22b",
+    "return-type": "json",
+    "interval": "once",
+    "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
+    "on-click": "~/.config/waybar/scripts/colorpicker.sh",
+    "tooltip": false,
+    "signal": 1
+  },
+  "cpu": {
+    "format": "[] {usage}%",
+    "tooltip": true,
+    "interval": 1
+  },
+  "memory": {
+    "interval": 1,
+    "format": "[] {used:0.1f}GiB",
+    "tooltip-format": "Memory Usage: {percentage}%"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "TEMP: {temperatureF}°"
+  },
+  "tray": {
+    "icon-size": 15,
+    "spacing": 10
+  },
+  "pulseaudio": {
+    "format-icons": {
+      "default": [
+        "\uf026",
+        "\uf027",
+        "\uf028"
+      ]
+    },
+    "format": "{icon}  {volume}%",
+    "format-muted": "\ueee8  0%",
+    "scroll-step": 1,
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+    "on-click": "pavucontrol"
+  }
+}

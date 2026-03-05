@@ -1,0 +1,238 @@
+{
+        "layer": "top",
+        "position": "top",
+	"height": 15,
+	"margin": "0px 0px 0px 0px",
+	"border-radius": "10px",
+        "reload_style_on_change": true,
+
+	
+        
+	"modules-left": [
+		"hyprland/workspaces",
+		"input-method",
+		"mpris",
+//		"tray",
+		"cava"
+	],
+        
+	"modules-center": [
+		"clock"
+	],
+        
+	"modules-right": [
+//		"group/expand2",
+		"network",
+		"bluetooth",
+		"pulseaudio",
+		"battery"
+	],
+	
+	"input-method": {
+		"format":"{active_name}",
+		"tooltip-format":"{active_id} : {active_name}",
+		"on-click":"ibus-setup"
+	},
+
+	"group/expand2": {
+		"orientation": "horizontal",
+                "drawer": {
+                        "transition-duration": 600,
+                        "transition-to-left": true,
+                        "hover-to-reveal": true
+                },
+                "modules": ["cpu","memory","disk"],	
+	},
+	
+	"custom/wallpaper":{
+		"format":"(-)",
+		"tooltip":"What will it be?",
+		"on-click":"/home/rasberry/randomize.sh"
+	},	
+	"custom/div2":{
+		"format":"[",
+		"tooltip":false
+	},
+
+	"custom/div3":{
+		"format":"]",
+		"tooltip":false
+	},
+	"custom/div": {
+	        "format": "|",
+		"tooltip":false
+	},
+	"mpris":{
+		"format":"▷ {artist} - {title}",
+		"format-paused":"❚❚ {artist} - paused",
+		"title-len":14,
+		"artist-len":14,
+		"interval":1,
+		"dynamic-len":15,
+		"tooltip-format":"{player} - {status}\n{title} - {artist}\n{album}\n{position}/{length}"	
+	},
+	"cava": {
+		"cava_config":"~/.config/cava/config"
+	},
+	"idle_inhibitor":{
+		"format":"{icon}",
+		"format-icons":{
+			"activated":" 👁 ",
+			"deactivated":"(-)"
+		},
+		"tooltip":false
+	},
+	"custom/note": {
+	        "format": "notepad",
+	        "on-click": "kitty nano notepad.txt",
+	        "tooltip": false
+	},
+	"disk": {
+	        "format": "[] {percentage_used}%",
+	        "unit": "GB"
+	},
+        "hyprland/workspaces": {
+                "format": " ",
+	        "format-icons":{
+		"active":""
+	        },
+                "persistent-workspaces": {
+                    "*": [ 1,2,3,4,5 ]
+                }
+        },
+
+        "custom/notification": {
+                "tooltip": false,
+                "format": "",
+                "on-click": "swaync-client -t -sw",
+                "escape": true
+        },
+        "clock": {
+                "format": "{:%I:%M:%S %p} ",
+		"tooltip-format":"{:%A, %B %d, %Y}",
+                "interval": 1,   
+	        "tooltip": true,
+                "on-click": "gnome-calendar",
+                "calendar": {
+                	"format": {
+                		"today": "<span color='#fAfBfC'><b>{}</b></span>"
+                	}
+            	},
+		"actions": {
+                	"on-click-right": "shift_down",
+                	"on-click": "shift_up"
+            	}
+        },
+        "network": {
+	    	"interval":1,
+            	"format-wifi": "  {essid}",
+            	"format-ethernet":"🖧  {essid}",
+            	"format-disconnected": "󰤮    No Connection",
+            	"tooltip-format-disconnected": "No connection",
+            	"tooltip-format-wifi": "{essid} ({signalStrength}%)\n↑{bandwidthUpBits} ↓{bandwidthDownBits}",
+            	"tooltip-format-ethernet": "{essid} ({signalStrength}%)\n↑{bandwidthUpBits} ↓{bandwidthDownBits}",
+            	"on-click": "nm-connection-editor"
+        },
+        "bluetooth": {
+       	    	"format-on": "⦰ 󰂯 Not Connected",
+            	"format-connected": "󰂯 {device_alias}",
+	    	"format-off": "Ø Off",
+            	"format-disabled": "Ø Disabled",
+	    	"tooltip-format-enumerate-connected": "{device_alias}\n   {device_address}",
+	    	"tooltip-format-connected":"{controller_alias}: {status}\nconnections: {num_connections}\naddress: {controller_address}\n\ndevices: \n{device_enumerate}",
+            	"on-click": "blueberry",
+        }, 
+        "battery": {
+            	"interval":5,
+            	"states": {
+                	"good": 95,
+                	"warning": 30,
+                	"critical": 20
+            	},
+            	"format": "{icon} {capacity}%",
+            	"format-charging": "󰂄 {capacity}%",
+            	"format-plugged": "󰂄 {capacity}%",
+            	"format-icons": [
+            	    	"󰁻",
+            		"󰁼",
+            		"󰁾",
+            		"󰂀",
+	            	"󰂂",
+            		"󰁹"
+            	],
+        },
+        "custom/pacman": {
+            	"format": "󰅢 {}",
+            	"interval": 30,   
+            	"exec": "checkupdates | wc -l",
+            	"exec-if": "exit 0",
+            	"on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+            	"signal": 8,
+            	"tooltip": false,
+        },
+	"hyprland/language":{
+	    	"format":"lang: {short}",
+	    	"tooltip": false
+	},
+        "custom/expand": {
+            	"format": "[] []",
+            	"tooltip": false
+        },
+	"custom/btlogo":{
+		"format":"[]"
+	},
+	"custom/wifilogo":{
+		"format":"[]"
+	},
+        "custom/endpoint":{
+            	"format": "|",
+            	"tooltip": false
+        },
+        "group/expand": {
+            	"orientation": "horizontal",
+            	"drawer": {
+                	"transition-duration": 600,
+                	"transition-to-left": true,
+                	"hover-to-reveal": true
+            	},
+            	"modules": ["network","bluetooth"],
+        },
+	
+        "custom/colorpicker": {
+            	"format": "color",
+            	"return-type": "json",
+            	"interval": "once",
+            	"exec": "~/.config/waybar/scripts/colorpicker.sh -j",
+            	"on-click": "~/.config/waybar/scripts/colorpicker.sh",
+            	"tooltip": false,
+		"signal": 1
+        },
+        "cpu": {
+            	"format": "[] {usage}%",
+            	"tooltip": true,
+	    	"interval": 1
+        },
+        "memory": {
+	    	"interval": 1,
+            	"format": "[] {used:0.1f}GiB",
+	    	"tooltip-format":"Memory Usage: {percentage}%"
+        },
+        "temperature": {
+            	"critical-threshold": 80,
+            	"format": "TEMP: {temperatureF}°",
+        },
+        "tray": {
+            	"icon-size": 15,
+            	"spacing": 10
+        },
+	"pulseaudio": {
+	    	"format-icons":{"default":["", "󰕾", ""]},
+	    	"format":"{icon}  {volume}%",
+		"format-muted":"x 0%",
+		"scroll-step":1,
+		"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+	    	"on-click": "pavucontrol"
+	},
+} 
+

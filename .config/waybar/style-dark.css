@@ -1,4 +1,5 @@
 @import url("../../.cache/wal/colors-waybar.css");
+@import url("../../.config/waybar/light-dark-control.css")
 
 @define-color color1color1 mix(@color1,@color1,.5);
 @define-color color1color3 mix(@color1,@color3,.5);
@@ -6,17 +7,17 @@
 @define-color color1color1in33 mix(@color1,@color1,.33);
 @define-color color1color1in66 mix(@color1,@color1,.66);
 
-@define-color light mix(@color1color1in33, #000000,.05);
-@define-color medium mix(@color1color1in66, #000000,.1);
-@define-color dark mix(@color1,#000000,.15);
+@define-color light mix(@color1color1in33, @firstcolor,.05);
+@define-color medium mix(@color1color1in66, @firstcolor,.1);
+@define-color dark mix(@color1,@firstcolor,.15);
 
 * {
   font-size: 15px;
-  font-family: "Century Schoolbook Monospace","Source Han Serif JP Medium","Fira Code Light","Font Awesome 6 Free Solid", sans-serif;
+  font-family: "Century Schoolbook Monospace","Source Han Serif JP Medium","Font Awesome 6 Free Solid", sans-serif;
 }
 
 window#waybar {
-  background-color: alpha(mix(@color2, #000000, 0.7), 1);
+  background-color: alpha(mix(@color2, @firstcolor, 0.7), 1);
 }
 
 .modules-left {
@@ -61,7 +62,7 @@ tooltip {
 #workspaces button.active:hover ,
 #workspaces button:not(.active):not(.visible):not(.empty):hover {
   padding: 0px 10px 0px 10px;
-  background:alpha(mix(#ffffff, @color2, 0.7),.3);
+  background:alpha(mix(@secondcolor, @color2, 0.7),.3);
   box-shadow:none;
   text-shadow:none;
   transition: all 0.2s ease;
@@ -78,33 +79,33 @@ tooltip {
 #pulseaudio:hover {
   padding:0px 10px 0px 10px;
 }
-#battery {
-  color: mix(@color1, #000000, 0.5);
+battery {
+  color: mix(@color1, @firstcolor, 0.5);
   margin: 0px 0px;
   padding: 0px 10px 0px 10px;
 }
 
 #pulseaudio {
-  color: mix(@color1, #000000, 0.5);
+  color: mix(@color1, @firstcolor, 0.5);
   margin: 0px 0px;
   padding: 0px 10px 0px 10px;
 }
 
 #bluetooth {
-  color: mix(@color1, #000000, 0.5);
+  color: mix(@color1, @firstcolor, 0.5);
   margin: 0px 0px;
   padding: 0px 10px 0px 10px;
 }
 
 #idle_inhibitor {
-  color: mix(@color1, #000000, 0.5);
+  color: mix(@color1, @firstcolor, 0.5);
   margin: 0px 0px;
   padding: 1px 17px 0px 10px;
   transition: all 0.2s ease;
 }
 
 #network {
-  color: mix(@color1, #000000, 0.5);
+  color: mix(@color1, @firstcolor, 0.5);
   margin: 0px 0px;
   padding: 0px 10px 0px 10px;
 }
@@ -123,14 +124,14 @@ tooltip {
 
 
 #custom-colorpicker {
-  color: mix(@color1, #ffffff, 0.5);
+  color: mix(@color1, @secondcolor, 0.5);
   margin: 0px 0px;
   padding: 0px 13px 0px 10px;
   transition: all 0.2s ease;
 }
 
 #language {
-  color: mix(@color1, #ffffff, 0.5);
+  color: mix(@color1, @secondcolor, 0.5);
   margin: 0px 0px;
   padding: 0px 10px 0px 10px;
 }
@@ -140,7 +141,7 @@ tooltip {
   margin: 0px 0px 0px 0px;
   padding: 2px 5px 0px 5px;
   font-size: 15px;
-  color: mix(@color1, #ffffff, 0.5);
+  color: mix(@color1, @secondcolor, 0.5);
   transition: all 0.2s ease;
   border-radius:0px
 }
@@ -149,7 +150,7 @@ tooltip {
   margin: 0px 0px 0px 0px;
   padding: 2px 10px 0px 10px;
   font-size: 15px;
-  color: mix(@color1, #ffffff, 0.5);
+  color: mix(@color1, @secondcolor, 0.5);
   transition: all 0.2s ease;
   border-radius:0px
 }
@@ -158,7 +159,7 @@ tooltip {
   margin: 0px 0px 0px 0px;
   padding: 1px 15px 0px 15px;
   transition: all 0.2s ease;
-  color: mix(#ffffff, @color1, 0.5);
+  color: mix(@secondcolor, @color1, 0.5);
 }
 
 /*
@@ -166,8 +167,8 @@ tooltip {
         margin:0px 5px 0px 5px;
         padding: 0px 15px 0px 15px;
         transition: all .5s ease;
-        color:mix(#000000, @color1, .5);
-        background:mix(#ffffff, @color1, .5);
+        color:mix(@firstcolor, @color1, .5);
+        background:mix(@secondcolor, @color1, .5);
         border-top-right-radius:50px;
         border-bottom-right-radius:50px;
         border-radius:50px;
@@ -179,7 +180,7 @@ tooltip {
   margin: 0px 0px;
   padding: 0px 5px 0px 5px;
   min-width: 0px;
-  color: mix(@color1, #ffffff, 0.5);
+  color: mix(@color1, @secondcolor, 0.5);
   transition: all 0.2s ease;
   border-radius:0px;
 }
@@ -190,34 +191,34 @@ tooltip {
   min-height: 0px;
   margin: 0px 0px;
   padding: 0px 5px;
-  color: mix(#ffffff, @color1, 0.5);
+  color: mix(@secondcolor, @color1, 0.5);
   transition: all 0.2s ease;
 }
 
 /* active window */
 #workspaces button.active {
   padding: 0px 5px 1px 5px;
-  color: mix(#000000, @color1, 0.5);
+  color: mix(@firstcolor, @color1, 0.5);
   border: none;
-  background:mix(#ffffff, @color1, 0.5);
+  background:mix(@secondcolor, @color1, 0.5);
   border-radius:0px;
 }
 
 /* visible window */
 #workspaces button.visible:not(.active) {
     padding: 0px 5px;
-    color: mix(#000000, @color1, 0.5);
-    background:mix(#ffffff, @color1, 0.5);
+    color: mix(@firstcolor, @color1, 0.5);
+    background:mix(@secondcolor, @color1, 0.5);
     border-radius: 0px;
 }
 
 /* not visible window that has stuff in it */
 #workspaces button:not(.active):not(.visible):not(.empty) {
-    padding: 1px 5px 0px 5px;
-    color: mix(#ffffff, @color1, 0.5);
+    padding: 0px 5px 0px 5px;
+    color: mix(@secondcolor,@color1,0.5); 
     background: alpha(@color1, 0);
     border-radius: 0px;
-    border-bottom: 2px solid mix(#ffffff, @color1, 0.5); 
+    border-bottom: 2px solid @color1; 
 }
 
 #workspaces button:hover {
@@ -227,9 +228,9 @@ tooltip {
 
 #workspaces button.active:hover {
   padding: 0px 5px;
-  color: mix(#000000, @color1, 0);
+  color: mix(@firstcolor, @color1, 0);
   border: none;
-  background:alpha(mix(#ffffff, @color2, 0.5),.7);
+  background:alpha(mix(@secondcolor, @color2, 0.5),.7);
   box-shadow:none;
   text-shadow:none;
   border-radius:0px;
@@ -237,9 +238,9 @@ tooltip {
 
 #workspaces button.visible:not(.active):hover {
   padding: 0px 5px;
-  color: mix(#000000, @color1, 0);
+  color: mix(@firstcolor, @color1, 0);
   border: none;
-  background:alpha(mix(#ffffff, @color2, 0.5),.7);
+  background:alpha(mix(@secondcolor, @color2, 0.5),.7);
   box-shadow:none;
   text-shadow:none;
   border-radius:0px;
@@ -252,32 +253,32 @@ tooltip {
 }
 
 #battery {
-  color: mix(@color1, #ffffff, 0.5);
+  color: mix(@color1, @secondcolor, 0.5);
   margin: 0px 0px;
   padding: 0px 10px 0px 10px;
 }
 
 #pulseaudio {
-  color: mix(@color1, #ffffff, 0.5);
+  color: mix(@color1, @secondcolor, 0.5);
   margin: 0px 0px;
   padding: 0px 10px 0px 10px;
 }
 
 #bluetooth {
-  color: mix(@color1, #ffffff, 0.5);
+  color: mix(@color1, @secondcolor, 0.5);
   margin: 0px 0px;
   padding: 0px 10px 0px 10px;
 }
 
 #idle_inhibitor {
-  color: mix(@color1, #ffffff, 0.5);
+  color: mix(@color1, @secondcolor, 0.5);
   margin: 0px 0px;
   padding: 1px 17px 0px 10px;
   transition: all 0.2s ease;
 }
 
 #network {
-  color: mix(@color1, #ffffff, 0.5);
+  color: mix(@color1, @secondcolor, 0.5);
   margin: 0px 0px;
   padding: 0px 10px 0px 10px;
 }

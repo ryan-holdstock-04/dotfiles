@@ -1,0 +1,195 @@
+{
+        "layer": "top",
+        "position": "top",
+	"height": 30,
+	"margin": "0px 0px 0px 0px",
+	"border-radius": "10px",
+        "reload_style_on_change": true,
+        "modules-left": ["idle_inhibitor","custom/div","clock","custom/div","bluetooth","custom/div","custom/note","custom/div","custom/colorpicker","custom/div","hyprland/language","custom/div","mpris"],
+        "modules-center": ["custom/div2","hyprland/workspaces","custom/div3"],
+        "modules-right": ["network","custom/div","cpu","custom/div","memory","custom/div","pulseaudio","custom/div","disk","custom/div","battery","custom/div","custom/wallpaper"],
+	"custom/wallpaper":{
+		"format":"(-)",
+		"tooltip":"What will it be?",
+		"on-click":"/home/rasberry/randomize.sh"
+	},	
+	"custom/div2":{
+		"format":"[",
+		"tooltip":false
+	},
+
+	"custom/div3":{
+		"format":"]",
+		"tooltip":false
+	},
+	"custom/div": {
+	    "format": "|",
+		"tooltip":false
+	},
+	"mpris":{
+		"format":"{artist} - {title}",
+		"format-paused":"{artist} - paused",
+		"title-len":14,
+		"artist-len":14,
+		"interval":1,
+		"dynamic-len":15,
+		"tooltip-format":"{player} - {status}\n{title} - {artist}\n{album}\n{position}/{length}"
+	},
+	"cava": {
+		"cava_config":"~/.config/cava/config"
+	},
+	"idle_inhibitor":{
+		"format":"{icon}",
+		"format-icons":{
+			"activated":" 👁 ",
+			"deactivated":"(-)"
+		},
+		"tooltip":false
+	},
+	"custom/note": {
+	    "format": "notepad",
+	    "on-click": "kitty nano notepad.txt",
+	    "tooltip": false
+	},
+	"disk": {
+	    "format": "disk: {percentage_used}%",
+	    "unit": "GB"
+	},
+        "hyprland/workspaces": {
+            "format": "{icon}",
+	    "format-icons":{
+		"active":"●"
+	    },
+            "persistent-workspaces": {
+                "*": [ 1,2,3,4,5 ]
+            }
+        },
+
+        "custom/notification": {
+            "tooltip": false,
+            "format": "",
+            "on-click": "swaync-client -t -sw",
+            "escape": true
+        },
+        "clock": {
+            "format": "{:%I:%M:%S %p} ",
+		"tooltip-format":"{:%A, %B %d, %Y}",
+            "interval": 1,   
+	    "tooltip": true,
+            "on-click": "gnome-calendar",
+            "calendar": {
+                "format": {
+                    "today": "<span color='#fAfBfC'><b>{}</b></span>"
+                }
+            },
+            "actions": {
+                "on-click-right": "shift_down",
+                "on-click": "shift_up"
+            }
+        },
+        "network": {
+	    "interval":1,
+            "format-wifi": "↑{bandwidthUpBits} ↓{bandwidthDownBits}",
+            "format-ethernet":"↑{bandwidthUpBits} ↓{bandwidthDownBits}",
+            "format-disconnected": "no Wi-Fi",
+            "tooltip-format-disconnected": "Error",
+            "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+            "tooltip-format-ethernet": "{ifname} 🖧 ",
+            "on-click": "nm-connection-editor"
+        },
+        "bluetooth": {
+            "format-on": "bt on",
+            "format-connected": "bt con",
+	    "format-off": "bt off",
+            "format-disabled": "bt disabled",
+	    "tooltip-format-enumerate-connected": "{device_alias}\n   {device_address}",
+	    "tooltip-format-connected":"{controller_alias}: {status}\nconnections: {num_connections}\naddress: {controller_address}\n\ndevices: \n{device_enumerate}",
+            "on-click": "blueberry",
+        }, 
+        "battery": {
+            "interval":5,
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 20
+            },
+            "format": "bat: {capacity}% {icon}",
+            "format-charging": "bat: {capacity}% 󰂄",
+            "format-plugged": "bat: {capacity}% 󰂄 ",
+            "format-icons": [
+                "󰁻",
+            "󰁼",
+            "󰁾",
+            "󰂀",
+            "󰂂",
+            "󰁹"
+            ],
+        },
+        "custom/pacman": {
+            "format": "󰅢 {}",
+            "interval": 30,   
+            "exec": "checkupdates | wc -l",
+            "exec-if": "exit 0",
+            "on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+            "signal": 8,
+            "tooltip": false,
+        },
+	"hyprland/language":{
+	    "format":"lang: {short}",
+	    "tooltip": false
+	},
+        "custom/expand": {
+            "format": "",
+            "tooltip": false
+        },
+        "custom/endpoint":{
+            "format": "|",
+            "tooltip": false
+        },
+        "group/expand": {
+            "orientation": "horizontal",
+            "drawer": {
+                "transition-duration": 600,
+                "transition-to-left": true,
+                "click-to-reveal": true
+            },
+            "modules": ["custom/expand", "custom/colorpicker","cpu","memory","temperature","custom/endpoint"],
+        },
+        "custom/colorpicker": {
+            "format": "color",
+            "return-type": "json",
+            "interval": "once",
+            "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
+            "on-click": "~/.config/waybar/scripts/colorpicker.sh",
+            "tooltip": false,
+		"signal": 1
+        },
+        "cpu": {
+            "format": "cpu: {usage}%",
+            "tooltip": true,
+	    "interval": 1
+        },
+        "memory": {
+	    "interval": 1,
+            "format": "ram: {used:0.1f}GiB",
+	    "tooltip-format":"Memory Usage: {percentage}%"
+        },
+        "temperature": {
+            "critical-threshold": 80,
+            "format": "TEMP: {temperatureF}°",
+        },
+        "tray": {
+            "icon-size": 14,
+            "spacing": 10
+        },
+	"pulseaudio": {
+	    "format-icons":{"default":["", "", ""]},
+	    "format":"audio: {volume}%",
+		"format-muted":"muted",
+		"scroll-step":1,
+		"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+	    "on-click": "pavucontrol"
+	},
+} 
+

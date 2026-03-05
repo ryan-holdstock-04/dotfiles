@@ -1,0 +1,231 @@
+@import url('../../.cache/wal/colors-waybar.css');
+
+* {
+    font-size:15px;
+    font-family: "IBM Plex Mono";
+}
+window#waybar{
+	background-color: alpha(#1D1D1D,1);
+}
+.modules-left {
+    padding:10px;
+    /*background: alpha(#1D1D1D,1);*/
+}
+.modules-center {
+    padding:5px;
+    /*background: alpha(#1D1D1D,1);*/
+}
+.modules-right {
+    padding:10px;
+    /*background: alpha(#1D1D1D,1);*/
+}
+tooltip {
+    background:@background;
+    color: @color7;
+}
+
+#clock:hover,#mpris:hover,#language:hover,#disk:hover, #custom-note:hover, #custom-wallpaper:hover,#custom-colorpicker:hover, #pulseaudio:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
+    transition: all .1s ease;
+    color:rgba(255,255,255,1);
+}
+#custom-div2 {
+	padding:0px 5px;
+	color:rgba(255,255,255,.8);
+}
+#custom-div3 {
+	padding:0px 5px;
+	color:rgba(255,255,255,.8);
+}
+#idle_inhibitor:hover {
+	transition: all .1s ease;
+	color:@color10;
+}
+#idle_inhibitor {
+	padding:0px 5px;
+	transition: all .1s ease;
+	color:#ffffff;
+}
+#mpris {
+	padding: 0px 5px;
+	transition: all .1s ease;
+	color:@color10;
+}
+#language {
+	padding: 0px 5px;
+	transition: all .1s ease;
+	color:@color5;
+}
+#disk {
+	padding: 0px 5px;
+	transition: all .1s ease;
+        color:@color2;
+}
+#custom-wallpaper {
+	padding: 0px 5px;
+	transition: all .1s ease;
+	color:@color7;
+}
+#custom-notification {
+    padding: 0px 5px;
+    transition: all .1s ease;
+    color:@color7;
+}
+#custom-note {
+	color:@color3;
+	padding: 0px 5px 0px 5px;
+}
+#clock{
+    padding: 0px 0px 0px 5px;
+	font-size:15px;
+	color:@color1;
+    transition: all .1s ease;
+}
+#custom-pacman{
+    padding: 0px 5px;
+    transition: all .1s ease;
+    color:@color7;
+
+}
+#custom-div {
+	color:rgba(255,255,255,.8);
+}
+#workspaces {
+    padding: 0px 0px;
+    text-shadow:none;
+    box-shadow:none;
+    border:none
+}
+#workspaces button {
+    padding: 0px 8px;
+    color: alpha(@color10, 1);
+    transition: all .1s ease;
+    background:rgba(255,255,255,0);
+    border:none;
+}
+#workspaces button:hover {
+    color:alpha(@color1,.6);
+    transition: all .1s ease;
+    background:rgba(255,255,255,.02);
+    text-shadow:none;
+    box-shadow:none;
+    border:none;
+}
+#workspaces button.active {
+    color: @color1;
+    background:rgba(255,255,255,0);
+    font-size: 15px;
+}
+#workspaces button.empty {
+    color: alpha(@color10,.5);
+}
+#workspaces button.empty:hover {
+    color: alpha(@color1,.6);
+    transition: all .1s ease;
+    background:rgba(255,255,255,.02);
+    text-shadow:none;
+    box-shadow:none;
+    border:none;
+}
+#workspaces button.active:hover {
+    color: @color1;
+    transition: all .1s ease;
+    background:rgba(255,255,255,.02);
+    text-shadow:none;
+    box-shadow:none;
+    border:none;
+}
+
+#workspaces button.empty.active {
+    color: @color1;
+}
+#bluetooth{
+    padding: 0px 5px;
+    transition: all .1s ease;
+    color:@color2
+
+}
+#network{
+    padding: 0px 5px;
+    transition: all .1s ease;
+    color:@color6;
+
+}
+#battery{
+    padding: 0px 5px;
+    transition: all .1s ease;
+    color:@color1;
+
+
+}
+#battery.charging {
+    color:@color1;
+}
+
+#battery.warning:not(.charging) {
+    color:@color1;
+}
+
+#battery.critical:not(.charging) {
+    color:@color1;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#pulseaudio{
+    padding: 0px 5px;
+    transition: all .1s ease;
+    color:@color3;
+}
+
+#group-expand{
+    padding: 0px 5px;
+    transition: all .1s ease; 
+}
+#custom-expand{
+    padding: 0px 5px;
+    color:alpha(@foreground,.2);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
+    transition: all .1s ease; 
+}
+#custom-expand:hover{
+    color:rgba(255,255,255,.2);
+    text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
+}
+#custom-colorpicker{
+    padding: 0px 5px;
+    transition: all .1s ease;
+    color:@color4;
+}
+#memory {
+    padding: 0px 5px;
+    transition: all .1s ease;
+    color:@color4;
+}
+#cpu,#temperature{
+    padding: 0px 5px;
+    transition: all .1s ease; 
+    color:@color5
+
+}
+#custom-endpoint{
+    color:transparent;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
+
+}
+#tray{
+    padding: 0px 5px;
+    transition: all .1s ease; 
+
+}
+#tray menu * {
+    padding: 0px 5px;
+    transition: all .1s ease; 
+}
+
+#tray menu separator {
+    padding: 0px 5px;
+    transition: all .1s ease; 
+}

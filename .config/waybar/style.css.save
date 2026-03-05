@@ -1,0 +1,162 @@
+@import url('../../.cache/wal/colors-waybar.css');
+
+@define-color color1color2 mix(@color1,@color2,.5);
+@define-color color2color3 mix(@color2,@color3,.5);
+
+@define-color color1color2in33 mix(@color1,@color2,.33);
+@define-color color1color2in66 mix(@color1,@color2,.66);
+
+@define-color light mix(@color1color2in33, #ffffff,.05);
+@define-color medium mix(@color1color2in66, #ffffff,.1);
+@define-color dark mix(@color2,#ffffff,.15);
+
+* {
+        font-size:15px;
+        font-family: "IBM Plex Mono";
+}
+
+window#waybar{
+        background-color: alpha(#1D1D1D,0);
+}
+
+.modules-left {
+	padding:5px 5px;
+}
+
+.modules-center {
+	padding:0px;
+}
+
+.modules-right {
+	padding:0px 0px 0px 0px;
+	color:mix(@color1,#ffffff,.5);
+	border-radius:50px;
+}
+
+tooltip {
+	background:@background;
+	color:@color7;
+}
+
+#clock:hover,#mpris:hover,#language:hover,#disk:hover, #custom-note:hover, #custom-wallpaper:hover,#custom-colorpicker:hover, #pulseaudio:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
+        transition: all .5s ease;
+        background:alpha(#000000,.7);
+}
+
+#clock{
+	margin:0px 5px 15px 5px;
+        padding: 0px 5px 0px 15px;
+        font-size:15px;
+        color:mix(#ffffff, @color3, .5);
+        transition: all .5s ease;
+        background:mix(#000000, @color3, .5);
+        border-bottom-left-radius:15px;
+        border-bottom-right-radius:15px;
+}
+
+#mpris {
+	margin:0px 5px 0px 5px;
+        padding: 0px 15px 0px 15px;
+        transition: all .5s ease;
+        color:mix(#ffffff, @color2, .5);
+        background:mix(#000000, @color2, .5);
+        border-top-right-radius:50px;
+	border-bottom-right-radius:50px;
+	border-radius:50px;
+}
+
+/*
+#tray {
+        margin:0px 5px 0px 5px;
+        padding: 0px 15px 0px 15px;
+        transition: all .5s ease;
+        color:mix(#ffffff, @color2, .5);
+        background:mix(#000000, @color2, .5);
+        border-top-right-radius:50px;
+        border-bottom-right-radius:50px;
+        border-radius:50px;
+}
+*/
+
+#workspaces {
+	border:none;
+	margin:0px 5px;
+	padding: 0px 10px;
+	min-width:100px;
+	background:mix(@color1,#000000,.5);
+	border-top-left-radius:50px;
+	border-bottom-left-radius:50px;
+	border-top-right-radius:50px;
+	border-bottom-right-radius:50px;
+	transition: all .5s ease;
+}
+
+#workspaces button {
+	border:none;
+	min-width: 23px;
+	min-height: 10px;
+	margin: 5px 5px;
+	padding: 0px 0px;
+	background:mix(#ffffff,@color1, .5);
+	transition: all .5s ease;
+	border-radius:50px;
+}
+
+#workspaces button.active {
+	margin:5px 5px;
+	min-width:45px;
+	padding:0px 0px;
+	background:@color1;
+	border: none;
+}
+
+#workspaces button:hover {
+	min-width: 23px;
+        min-height: 10px;
+        margin: 5px 5px;
+        padding: 0px 0px;
+        background:mix(#ffffff,@color1, .0);
+        transition: all .5s ease;
+        border-radius:50px;
+        border:none;
+}
+
+#workspaces button.active:hover {
+	margin:5px 5px;
+        min-width:45px;
+        padding:0px 0px;
+        background:alpha(#ffffff,1);
+        border:none;
+}
+
+#battery {
+	background:mix(@color1,#000000,.5);
+	color:mix(@color1,#ffffff,.5);
+	border-radius:50px;
+	margin:5px 5px;
+	padding:5px 15px 5px 15px;
+}
+
+#pulseaudio {
+	background:mix(@light,#000000,.5);
+	color:mix(@light,#ffffff,.5);
+	border-radius:50px;
+	margin:5px 5px;
+	padding: 5px 15px 5px 15px;
+}
+
+#bluetooth {
+	background:mix(@medium,#000000,.5);
+	color:mix(@medium,#ffffff,.5);
+	border-radius:50px;
+	margin:5px 5px;
+	padding: 5px 15px 5px 15px;
+}
+
+#network {
+	background:mix(@dark,#000000,.5);
+	color:mix(@dark,#ffffff,.5);
+	border-radius:50px;
+	margin:5px 5px;
+	padding: 5px 15px 5px 15px;
+}
