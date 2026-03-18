@@ -11,14 +11,14 @@
     "keyBindings": {
         "choose": "enter",
         "clearSelected": "S",
-        "down": "k",
+        "down": "j",
         "end": "end",
         "filter": "/",
         "forceQuit": "Q",
         "home": "home",
         "more": "?",
         "nextPage": "l",
-        "prevPage": "j",
+        "prevPage": "h",
         "preview": " ",
         "quit": "esc",
         "remove": "backspace",
@@ -27,7 +27,7 @@
         "selectUp": "shift+up",
         "togglePin": "p",
         "togglePinned": "tab",
-        "up": "i",
+        "up": "k",
         "yankFilter": "ctrl+s"
     },
     "imageDisplay": {
