@@ -1,5 +1,4 @@
-{
-  "layer": "top",
+{ "layer": "top",
   "position": "top",
   "height": 15,
   "margin": "0px 0px 0px 0px",
@@ -161,7 +160,7 @@
     "format-disabled": "\udb80\udcb2",
     "tooltip-format-enumerate-connected": "{device_alias}\n   {device_address}",
     "tooltip-format-connected": "{device_enumerate}",
-    "on-click": "blueberry"
+    "on-click": "kitty --title bluetooth -e bluetuith"
   },
   "battery": {
     "interval": 5,
@@ -265,6 +264,6 @@
     "scroll-step": 1,
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
-    "on-click": "pavucontrol"
+    "on-click": "kitty --title audiocontroller -e pulsemixer"
   }
 }
