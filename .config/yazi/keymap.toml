@@ -20,6 +20,8 @@ prepend_keymap = [
   { on = [ "s", "s" ], run = "shell --block /home/rasberry/Scripts/sudoyazi.sh", desc = "Relaunch with sudo privileges"},
   { on = [ "s", "d" ], run = "shell 'ripdrag \"$@\" &' --confirm", desc="Drag and drop files"},
   { on = [ "g", "p" ], run = "cd /home/rasberry/Projects/", desc = "Go to projects"},
+	{ on = ["S", "s"],         run = "search --via=fd",             desc = "Search files by name via fd" },
+	{ on = ["S", "S"],        run = "search --via=rg",             desc = "Search files by content via ripgrep" },
 ]
 
 # [spot]
